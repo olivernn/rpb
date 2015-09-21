@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/olivernn/rpb"
 	"io"
 	"os"
 )
@@ -11,7 +10,7 @@ import (
 func main() {
 	port := flag.Int("port", 2225, "remote pbpaste port")
 	flag.Parse()
-	pboard, err := rpb.OpenRead(*port)
+	pboard, err := OpenConnection(*port)
 
 	if err != nil {
 		fmt.Println(err)

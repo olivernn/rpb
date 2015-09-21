@@ -10,7 +10,7 @@ import (
 func main() {
 	port := flag.Int("port", 2224, "remote pbcopy port")
 	flag.Parse()
-	pboard, err := OpenWrite(*port)
+	pboard, err := OpenConnection(*port)
 
 	if err != nil {
 		fmt.Println(err)

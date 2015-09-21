@@ -1,4 +1,4 @@
-package rpb
+package main
 
 import (
 	"fmt"

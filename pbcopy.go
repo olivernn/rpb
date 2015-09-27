@@ -7,9 +7,19 @@ import (
 	"os"
 )
 
+var version string
+
 func main() {
 	port := flag.Int("port", 2224, "remote pbcopy port")
+	showVersion := flag.Bool("v", false, "display version")
+
 	flag.Parse()
+
+	if *showVersion {
+		fmt.Println(version)
+		os.Exit(0)
+	}
+
 	pboard, err := OpenConnection(*port)
 
 	if err != nil {

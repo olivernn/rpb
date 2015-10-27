@@ -7,16 +7,14 @@ import (
 	"os"
 )
 
-var version string
-
 func main() {
-	port := flag.Int("port", 2225, "remote pbpaste port")
+	port := flag.Int("port", PbpastePort, "remote pbpaste port")
 	showVersion := flag.Bool("v", false, "display version")
 
 	flag.Parse()
 
 	if *showVersion {
-		fmt.Println(version)
+		fmt.Println(Version)
 		os.Exit(0)
 	}
 
